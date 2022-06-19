@@ -14,7 +14,7 @@ public class Question {
     this.d = d;
     caString.trim();
     System.out.print(q + "\""+caString + "\"" );
-    if(!(caString.length() == 1 && (caString.equalsIgnoreCase("A") || caString.equalsIgnoreCase("B") || caString.equalsIgnoreCase("C") || caString.equalsIgnoreCase("D")))) {
+    if((caString.length() == 1 && (caString.equalsIgnoreCase("A") || caString.equalsIgnoreCase("B") || caString.equalsIgnoreCase("C") || caString.equalsIgnoreCase("D")))) {
       caString = caString.toUpperCase();//MCQ
       this.caChar= caString.charAt(0);
       this.caString = "";
@@ -27,6 +27,7 @@ public class Question {
     System.out.println(isFRQ);
   }
   public boolean askQ() {
+    isFRQ = !isFRQ;
     System.out.println(isFRQ);
     System.out.println(this.q);
     if (!isFRQ) {
